@@ -13,12 +13,44 @@
    <img src="img/logo.png" alt="my logo">
    <ul class="links">
      <li><a href="#">Shop</a></li>
-     <li><a href="#">Cart</a></li>
+     <li><a href="#" onclick="openCart()">Cart</a></li>
    </ul>
  </header>
 
  <div id="products" class="products"></div>
+ <div  id="modal" class="modal">
+  <nav class="nav-items">
+    <ul>
+      <li>shopping cart</li>
+      <li> 2 items</li>
+    </ul>
+  </nav>
+  <div class="items"> 
+
+    <div class="item">
+      <img src="./img/maxim-hopman-Hin-rzhOdWs-unsplash.jpg" alt="dunno">
+      <div class="text">
+        <h4>1 Macbook pro</h4>
+        <p class="item-price">$849.99</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="./img/louis-philippe-poitras-WMMh6BtmTMo-unsplash.jpg" alt="dunno">
+      <div class="text">
+        <h4>1 xBox 360</h4>
+        <p class="item-price">$1249.99</p>
+      </div>
+    </div>
+
+    <button type="button" onclick="closeCart()" >okay</button>
+
+
+  </div>
+</div>
 
 <script type="module" src="js/index.js"></script>
+<script src="/js/modal.js"></script>
+
 </body>
 </html>
