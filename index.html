@@ -1,66 +1,64 @@
-<!doctype html>
+<!-- @format -->
+
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
-<script type="module" src="js/index.js" async ></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Document</title>
+		<script type="module" src="js/index.js" async></script>
+	</head>
+	<body id="body">
+		<header>
+			<img src="img/logo.png" alt="my logo" />
+			<ul class="links">
+				<li><a href="#">Shop</a></li>
+				<li><a href="#">Cart</a></li>
+			</ul>
+		</header>
 
-</head>
-<body id="body">
- <header>
-   <img src="img/logo.png" alt="my logo">
-   <ul class="links">
-     <li><a href="#">Shop</a></li>
-     <li><a href="#">Cart</a></li>
-   </ul>
- </header>
+		<div id="products" class="products"></div>
 
- <div id="products" class="products"></div>
+		<div class="product-modal" id="modal-class"></div>
 
-<div class="product-modal" id="modal-class"></div>
+		<div class="title">
+			<h3>Item</h3>
+			<h3>Price</h3>
+			<h3>Quantity</h3>
+		</div>
 
-<div class="title">
-    <h3>Item</h3>
-    <h3>Price</h3>
-    <h3>Quantity</h3>
-
-</div>
-
-<div class="cartitems">
-<div class="cart" id="cart">
-  <div class="cart-img">
-    <h4>gucci bag</h4>
-    <img src="img/logo.png" alt="my logo" class="cartImg">
-  </div>
-  <div>
-    <h4 class="price" id="price">$850</h4>
-  </div>
-  <div>
-    <input class="qtyInput" type="number" value="1" style="width: 30px;">
-    <button class="btn-remove" id="btn-remove">Remove</button>
-  </div>
-</div>
-<div class="cart" id="cart">
-  <div class="cart-img">
-    <h4>gucci bag</h4>
-    <img src="img/logo.png" alt="my logo" class="cartImg">
-  </div>
-  <div>
-    <h4 class="price" id="price">$858</h4>
-  </div>
-  <div>
-    <input  class="qtyInput" type="number" value="1" style="width: 30px;">
-    <button class="btn-remove" id="btn-remove">Remove</button>
-  </div>
-</div>
-</div>
-<h2 class="total1"> total = <span class="total"> 0</span></h2>
-
-
-
-</body>
-</html> 
+		<div class="cartitems">
+			<div class="cart" id="cart">
+				<div class="cart-img">
+					<h4>gucci bag</h4>
+					<img src="img/logo.png" alt="my logo" class="cartImg" />
+				</div>
+				<div>
+					<h4 class="price" id="price">$850</h4>
+				</div>
+				<div>
+					<input class="qtyInput" type="number" value="1" style="width: 30px" />
+					<button class="btn-remove" id="btn-remove">Remove</button>
+				</div>
+			</div>
+			<div class="cart" id="cart">
+				<div class="cart-img">
+					<h4>Gucci bag</h4>
+					<img src="img/logo.png" alt="my logo" class="cartImg" />
+				</div>
+				<div>
+					<h4 class="price" id="price">$858</h4>
+				</div>
+				<div>
+					<input class="qtyInput" type="number" value="1" style="width: 30px" />
+					<button class="btn-remove" id="btn-remove">Remove</button>
+				</div>
+			</div>
+		</div>
+		<h2 class="total1">total = <span class="total"> 0</span></h2>
+	</body>
+</html>
