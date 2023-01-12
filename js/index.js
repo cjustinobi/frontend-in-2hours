@@ -1,5 +1,6 @@
 
 import { products } from './data.js'
+import { addItem } from './cart.js'
 
 const prods = document.getElementById('products')
 
@@ -14,7 +15,7 @@ const renderProducts = () => {
          <div>
           <p>${product.name}</p>
           <p>${product.price}</p>
-           <button>Add To Cart</button>
+           <button id="${product.id}">Add To Cart</button>
          </div>
        </div>
       `
@@ -29,4 +30,14 @@ window.addEventListener(`load`, (event) => {
   renderProducts()
 
 })
+
+document.addEventListener("click", function(e){
+  const productId = e.target.id
+
+  const product = products.find(item => item.id == productId)
+
+  addItem(product)
+
+
+});
 
