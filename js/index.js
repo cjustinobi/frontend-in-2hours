@@ -1,6 +1,6 @@
 
 import { products } from './data.js'
-import { addItem } from './cart.js'
+import { addItem, setCart } from './cart.js'
 
 const prods = document.getElementById('products')
 
@@ -15,7 +15,7 @@ const renderProducts = () => {
          <div>
           <p>${product.name}</p>
           <p>${product.price}</p>
-           <button id="${product.id}">Add To Cart</button>
+           <button id="item-${product.id}">Add To Cart</button>
          </div>
        </div>
       `
@@ -28,15 +28,28 @@ const renderProducts = () => {
 window.addEventListener(`load`, (event) => {
 
   renderProducts()
+  setCart()
 
 })
 
 document.addEventListener("click", function(e){
-  const productId = e.target.id
 
-  const product = products.find(item => item.id == productId)
+  const target = e.target
 
-  addItem(product)
+  if (target.id == 'cart') {
+
+    let el = document.getElementById('cart-modal')
+    el.style.width = '50%'
+
+  } else if(target.id.includes('item')) {
+
+    const productId = target.id.split('-')[1]
+
+    const product = products.find(item => item.id == productId)
+
+    addItem(product)
+  }
+
 
 
 });

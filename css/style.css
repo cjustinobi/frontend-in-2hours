@@ -46,6 +46,17 @@ header img {
   height: auto;
 }
 
+#cart-modal {
+  width: 0%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: gray;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
 @media (max-width: 767px) {
   .products {
     display: block;

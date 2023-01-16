@@ -6,7 +6,6 @@ const carts = localStorage.getItem('carts') ?
 export const addItem = item => {
 
   if (carts.length)  {
-
     const productFound = carts.find(product => product.id == item.id )
 
     if (productFound) {
@@ -40,9 +39,23 @@ export const addItem = item => {
 
     // Persist data
     localStorage.setItem('carts', JSON.stringify(carts))
-  }
 
+  }
+  setCart()
 
 }
 
-console.log(carts)
+const cartCount = () => {
+  if (carts.length) {
+    let count = 0
+    carts.forEach(item => {
+      count += item.qty
+    })
+    return count
+  }
+  return 0
+}
+
+export const setCart = () => {
+  document.getElementById('cart').innerHTML = `Cart ${cartCount()}`
+}
