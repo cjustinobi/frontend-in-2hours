@@ -57,5 +57,5 @@ const cartCount = () => {
 }
 
 export const setCart = () => {
-  document.getElementById('cart').innerHTML = `Cart<span class="AddCart">${cartCount()}</span>`
+  document.getElementsByClassName('AddCart')[0].innerHTML = cartCount()
 }
