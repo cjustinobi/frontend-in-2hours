@@ -47,14 +47,48 @@ header img {
 }
 
 #cart-modal {
-  width: 0%;
+  width: 0;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: gray;
+  background: #c1bfbf;
   transition: 0.4s;
   overflow: hidden;
+}
+
+.cart-item {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+
+.cart-name, .cart-price {
+  font-weight: 700;
+}
+
+.cart-subtotal {
+  grid-column: 4 / 5;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 99999;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: gray;
+  opacity: 0.3;
+}
+
+.add-minus span {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.add-minus .add, .add-minus .minus {
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {

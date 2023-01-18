@@ -1,6 +1,6 @@
 import { products } from './data.js'
 
-const carts = localStorage.getItem('carts') ?
+export const carts = localStorage.getItem('carts') ?
   JSON.parse(localStorage.getItem('carts')) : []
 
 export const addItem = item => {
@@ -41,7 +41,7 @@ export const addItem = item => {
     localStorage.setItem('carts', JSON.stringify(carts))
 
   }
-  setCart()
+  setCartCount()
 
 }
 
@@ -56,6 +56,35 @@ const cartCount = () => {
   return 0
 }
 
-export const setCart = () => {
+
+export const increment = id => {
+  const cartIndex = carts.findIndex(item => item.id == id)
+
+  carts[cartIndex].qty++
+
+  // Update the UI
+  document.getElementById(`qty-${id}`).innerText = carts[cartIndex].qty
+  setCartCount()
+
+  // Persist data
+  localStorage.setItem('carts', JSON.stringify(carts))
+}
+
+export const decrement = id => {
+  const cartIndex = carts.findIndex(item => item.id == id)
+
+  if (carts[cartIndex].qty === 1) return
+
+  carts[cartIndex].qty--
+
+  // Update the UI
+  document.getElementById(`qty-${id}`).innerText = carts[cartIndex].qty
+  setCartCount()
+
+  // Persist data
+  localStorage.setItem('carts', JSON.stringify(carts))
+}
+
+export const setCartCount = () => {
   document.getElementById('cart').innerHTML = `Cart ${cartCount()}`
 }
